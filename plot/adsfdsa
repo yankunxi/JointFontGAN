@@ -1,0 +1,2 @@
+python ./plot/show.py --font "1980 portable.0.0" "ARACNE_regular_italic.0.0" "Bauchaomaicha.0.0" "Cartoon Toy.0.0" "Cordel Circo Mambembe Soft.0.0" "DURALITH.0.0" "DisposableDroidBB_bld.0.0" --niter 1000 --niter_decay 200 --which_epoch 1200 --phase test --model "cGAN"
+
