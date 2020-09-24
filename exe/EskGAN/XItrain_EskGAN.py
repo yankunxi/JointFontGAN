@@ -1,8 +1,8 @@
-#=====================================
-# XI-fontGAN
-# from MC-GAN
-# from https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix
-#=====================================
+#=============================
+# JointFontGAN
+# Modified from https://github.com/azadis/MC-GAN
+# By Yankun Xi
+#=============================
 
 import os
 import sys

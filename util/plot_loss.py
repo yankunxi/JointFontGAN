@@ -1,8 +1,8 @@
-################################################################################
-# MC-GAN
-# plot different loss values of StackGAN_model during training from the log file
-# By Samaneh Azadi
-################################################################################
+#=============================
+# JointFontGAN
+# Modified from https://github.com/azadis/MC-GAN
+# By Yankun Xi
+#=============================
 
 
 import os
@@ -71,13 +71,13 @@ def main():
     fig, axes = plt.subplots(2,4, figsize=(14,8))
     for i in range(len(loss_type)):
         lossType = loss_type[i]
-        print lossType
+        print(lossType)
         loss,epoch = plot_loss(loss_path, lossType,loss2col[lossType],n_avg)
         loss_.append(np.array(loss))
         epoch_.append(np.array(epoch))
         axes[ind[i][0],ind[i][1]].plot(loss)
         axes[ind[i][0],ind[i][1]].set_title(lossType)
-    print 'save to %s/losses.png'%(loss_path)
+    print('save to %s/losses.png'%(loss_path))
     plt.savefig('%s/losses.png'%loss_path)
     
     

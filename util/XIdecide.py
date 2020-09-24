@@ -1,3 +1,8 @@
+#=====================================
+# JointFontGAN
+# By Yankun Xi
+#=====================================
+
 import os
 from . import XIhtml
 

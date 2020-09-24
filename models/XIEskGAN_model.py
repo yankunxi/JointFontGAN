@@ -1,9 +1,8 @@
-################################################################################
-# MC-GAN
-# Glyph Network Model
-# By Samaneh Azadi
-################################################################################
-
+#=============================
+# JointFontGAN
+# Modified from https://github.com/azadis/MC-GAN
+# By Yankun Xi
+#=============================
 import torch
 from collections import OrderedDict
 from torch.autograd import Variable
@@ -12,7 +11,6 @@ from xifontgan.util.image_pool import ImagePool
 from xifontgan.util.indexing import str2index
 from .XIbase_model import BaseModel
 from . import XInetworks
-import random
 
 
 class EskGANModel(BaseModel):

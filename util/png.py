@@ -1,3 +1,7 @@
+#=============================
+# from https://github.com/azadis/MC-GAN
+#=============================
+
 import struct
 import zlib
 

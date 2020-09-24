@@ -1,8 +1,15 @@
+# =============================
+# JointFontGAN
+# Modified from https://github.com/azadis/MC-GAN
+# By Yankun Xi
+# =============================
+
+
 from __future__ import print_function
 import torch
-import numpy as np
 from PIL import Image, ImageOps
-import inspect, re
+import inspect
+import re
 import numpy as np
 import os
 import collections

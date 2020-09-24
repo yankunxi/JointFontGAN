@@ -1,8 +1,8 @@
-################################################################################
-# MC-GAN
-# Modified from https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix
-# By Samaneh Azadi
-################################################################################
+#=============================
+# JointFontGAN
+# Modified from https://github.com/azadis/MC-GAN
+# By Yankun Xi
+#=============================
 
 import torch
 import torch.nn as nn
@@ -10,11 +10,6 @@ from torch.autograd import Variable
 from torch.nn.parameter import Parameter
 import numpy as np
 import functools
-# from XIResnet import *
-from torch import index_select
-
-
-# , LongTensor
 
 
 def weights_init(m):

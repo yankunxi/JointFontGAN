@@ -1,8 +1,8 @@
-################################################################################
-# MC-GAN
-# Glyph Network Model
-# By Samaneh Azadi
-################################################################################
+#=============================
+# JointFontGAN
+# Modified from https://github.com/azadis/MC-GAN
+# By Yankun Xi
+#=============================
 
 import torch
 from collections import OrderedDict

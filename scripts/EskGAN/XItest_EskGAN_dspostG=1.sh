@@ -1,10 +1,10 @@
 #!/bin/bash -f
 
-#=====================================
-# MC-GAN
-# Train and Test conditional GAN Glyph network
-# By Samaneh Azadi
-#=====================================
+#=============================
+# JointFontGAN
+# Modified from https://github.com/azadis/MC-GAN
+# By Yankun Xi
+#=============================
 
 
 #=====================================

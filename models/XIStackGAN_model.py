@@ -14,7 +14,6 @@ from .XIbase_model import BaseModel
 from . import XInetworks
 from torch import index_select, LongTensor
 import random
-from xifontgan.util.indexing import str2index
 
 
 class StackGANModel(BaseModel):

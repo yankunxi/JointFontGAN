@@ -1,3 +1,11 @@
+#=============================
+# JointFontGAN
+# Modified from https://github.com/azadis/MC-GAN
+# By Yankun Xi
+#=============================
+
+# TODO
+
 if __package__ is None:
     import os
     import sys
