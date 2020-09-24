@@ -1,22 +1,16 @@
-################################################################################
-# MC-GAN
-# Modified from https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix
-# By Samaneh Azadi
-################################################################################
+#=============================
+# from https://github.com/azadis/MC-GAN
+#=============================
 
-from torch import transpose
+
 import torch.utils.data as data
 from torch import index_select, LongTensor
 from PIL import Image
 import os
 import os.path
 import numpy as np
-from scipy import misc
-import random
-# from xifontgan.options.XItrain_options import TrainOptions
 import torch
 
-# opt = TrainOptions().parse()  # set CUDA_VISIBLE_DEVICES before import torch
 
 IMG_EXTENSIONS = ['.png']
 

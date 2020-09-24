@@ -1,8 +1,8 @@
-################################################################################
-# MC-GAN
-# Modified from https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix
-# By Samaneh Azadi
-################################################################################
+#=============================
+# JointFontGAN
+# Modified from https://github.com/azadis/MC-GAN
+# By Yankun Xi
+#=============================
 
 from .XIbase_options import BaseOptions
 

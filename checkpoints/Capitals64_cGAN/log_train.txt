@@ -1,0 +1,843 @@
+!!! writing section [Shuo-YankunXi], option [everything_root], value [/mnt/Files/XIremote/OneDrive - Wayne State University/]
+!!! writing section [Shuo-YankunXi], option [project_relative], value [XIcodes/Python/python3.6/pytorch1.2/XIfontGAN_yankunxi/XIFONTGAN_05_github/xifontgan]
+!!! writing section [Shuo-YankunXi], option [data_relative], value [XIdataset/font/English]
+!!! writing section [Shuo-YankunXi], option [use_auxiliary], value [False]
+!!! writing section [Shuo-YankunXi], option [auxiliary_root], value [/mnt/Files/XIremote/OneDrive - Wayne State University/XIauxiliary]
+!!! writing section [Shuo-YankunXi], option [use_buffer], value [False]
+!!! writing section [Shuo-YankunXi], option [buffer_root], value [/mnt/Files/XIremote/OneDrive - Wayne State University/XIbuffer]
+------------ Options -------------
+align_data: True
+aspect_ratio: 1.0
+auxiliary_root: /mnt/Files/XIremote/OneDrive - Wayne State University/XIauxiliary
+base_font: False
+base_root: 
+batchSize: 150
+batchSplit: 1
+beta1: 0.5
+blanks: 0.7
+buffer_root: /mnt/Files/XIremote/OneDrive - Wayne State University/XIbuffer
+charset: ENcap
+checkpoints_dir: checkpoints
+computer_name: Shuo-YankunXi
+conditional: True
+continue_latest: True
+conv3d: True
+data_loader: base
+data_relative: XIdataset/font/English
+dataset: Capitals64
+diff_loss0: L1
+diff_loss1: MSE
+display_freq: 100
+display_id: 0
+display_winsize: 256
+downsampling_0_mult: 3
+downsampling_0_n: 2
+dspost_G: 0
+dspost_Gsk: 1
+everything_root: /mnt/Files/XIremote/OneDrive - Wayne State University/
+experiment_dir: Capitals64_cGAN
+fineSize: 64
+flat: False
+gamma: 0.0001
+gpu_ids: [0]
+grps: 26
+how_many: 10000
+input_nc: 26
+input_nc_1: 3
+isTrain: True
+lambda_A: 100.0
+lambda_C: 0.0
+loadSize: 64
+lr: 0.0002
+max_dataset_size: inf
+model: cGAN
+nThreads: 2
+n_layers_D: 1
+ndf: 64
+ngf: 64
+nif: 32
+niter: 25
+niter_decay: 0
+no_Style2Glyph: False
+no_html: False
+no_lsgan: False
+no_permutation: False
+noisy_disc: False
+norm: batch
+ntest: inf
+orna: False
+output_nc: 26
+output_nc_1: 3
+partial: False
+phase: train
+pool_size: 50
+print_freq: 1
+print_weights: False
+project_relative: XIcodes/Python/python3.6/pytorch1.2/XIfontGAN_yankunxi/XIFONTGAN_05_github/xifontgan
+project_root: /mnt/Files/XIremote/OneDrive - Wayne State University/XIcodes/Python/python3.6/pytorch1.2/XIfontGAN_yankunxi/XIFONTGAN_05_github/xifontgan
+results_dir: results
+rgb: False
+rgb_in: False
+rgb_out: False
+save_epoch_freq: 100
+save_latest_freq: 10000
+serial_batches: False
+skmode: -1
+stack: False
+stack_result: True
+str_input: 
+str_input_indices: []
+str_output: 
+str_output_indices: []
+use_auxiliary: False
+use_buffer: False
+use_dropout: True
+use_dropout1: False
+which_epoch: 5
+which_epoch1: 0+0
+which_model_netD: n_layers
+which_model_netG: resnet_6blocks
+which_model_preNet: 2_layers
+zip_results: 0
+-------------- End ----------------
+Traceback (most recent call last):
+  File "/mnt/Files/XIremote/OneDrive - Wayne State University/XIcodes/Python/python3.6/pytorch1.2/XIfontGAN_yankunxi/XIFONTGAN_05_github/xifontgan/exe/cGAN/XItrain_cGAN.py", line 34, in <module>
+    data_loader = CreateDataLoader(opt)
+  File "/mnt/Files/XIremote/OneDrive - Wayne State University/XIcodes/Python/python3.6/pytorch1.2/XIfontGAN_yankunxi/XIFONTGAN_05_github/xifontgan/data/XIdata_loader.py", line 58, in CreateDataLoader
+    data_loader.initialize(opt)
+  File "/mnt/Files/XIremote/OneDrive - Wayne State University/XIcodes/Python/python3.6/pytorch1.2/XIfontGAN_yankunxi/XIFONTGAN_05_github/xifontgan/data/XIdata_loader.py", line 1180, in initialize
+    dataset = ImageFolder(root=os.path.join(self.dataroot, opt.phase),
+  File "/mnt/Files/XIremote/OneDrive - Wayne State University/XIcodes/Python/python3.6/pytorch1.2/XIfontGAN_yankunxi/XIFONTGAN_05_github/xifontgan/data/XIimage_folder.py", line 63, in __init__
+    imgs = make_dataset(root)
+  File "/mnt/Files/XIremote/OneDrive - Wayne State University/XIcodes/Python/python3.6/pytorch1.2/XIfontGAN_yankunxi/XIFONTGAN_05_github/xifontgan/data/XIimage_folder.py", line 24, in make_dataset
+    assert os.path.isdir(dir), '%s is not a valid directory' % dir
+AssertionError: /mnt/Files/XIremote/OneDrive - Wayne State University/XIdataset/font/English/train is not a valid directory
+reading section [Shuo-YankunXi], option [everything_root], value [/mnt/Files/XIremote/OneDrive - Wayne State University/]
+reading section [Shuo-YankunXi], option [project_relative], value [XIcodes/Python/python3.6/pytorch1.2/XIfontGAN_yankunxi/XIFONTGAN_05_github/xifontgan]
+reading section [Shuo-YankunXi], option [data_relative], value [XIdataset/font/English]
+reading section [Shuo-YankunXi], option [use_auxiliary], value [True]
+reading section [Shuo-YankunXi], option [auxiliary_root], value [/mnt/Files/XIremote/OneDrive - Wayne State University/XIauxiliary]
+reading section [Shuo-YankunXi], option [use_buffer], value [False]
+reading section [Shuo-YankunXi], option [buffer_root], value [/mnt/Files/XIremote/OneDrive - Wayne State University/XIbuffer]
+------------ Options -------------
+align_data: True
+aspect_ratio: 1.0
+auxiliary_root: /mnt/Files/XIremote/OneDrive - Wayne State University/XIauxiliary
+base_font: False
+base_root: 
+batchSize: 150
+batchSplit: 1
+beta1: 0.5
+blanks: 0.7
+buffer_root: /mnt/Files/XIremote/OneDrive - Wayne State University/XIbuffer
+charset: ENcap
+checkpoints_dir: checkpoints
+computer_name: Shuo-YankunXi
+conditional: True
+continue_latest: True
+conv3d: True
+data_loader: base
+data_relative: XIdataset/font/English
+dataset: Capitals64
+diff_loss0: L1
+diff_loss1: MSE
+display_freq: 100
+display_id: 0
+display_winsize: 256
+downsampling_0_mult: 3
+downsampling_0_n: 2
+dspost_G: 0
+dspost_Gsk: 1
+everything_root: /mnt/Files/XIremote/OneDrive - Wayne State University/
+experiment_dir: Capitals64_cGAN
+fineSize: 64
+flat: False
+gamma: 0.0001
+gpu_ids: [0]
+grps: 26
+how_many: 10000
+input_nc: 26
+input_nc_1: 3
+isTrain: True
+lambda_A: 100.0
+lambda_C: 0.0
+loadSize: 64
+lr: 0.0002
+max_dataset_size: inf
+model: cGAN
+nThreads: 2
+n_layers_D: 1
+ndf: 64
+ngf: 64
+nif: 32
+niter: 25
+niter_decay: 0
+no_Style2Glyph: False
+no_html: False
+no_lsgan: False
+no_permutation: False
+noisy_disc: False
+norm: batch
+ntest: inf
+orna: False
+output_nc: 26
+output_nc_1: 3
+partial: False
+phase: train
+pool_size: 50
+print_freq: 1
+print_weights: False
+project_relative: XIcodes/Python/python3.6/pytorch1.2/XIfontGAN_yankunxi/XIFONTGAN_05_github/xifontgan
+project_root: /mnt/Files/XIremote/OneDrive - Wayne State University/XIcodes/Python/python3.6/pytorch1.2/XIfontGAN_yankunxi/XIFONTGAN_05_github/xifontgan
+results_dir: results
+rgb: False
+rgb_in: False
+rgb_out: False
+save_epoch_freq: 100
+save_latest_freq: 10000
+serial_batches: False
+skmode: -1
+stack: False
+stack_result: True
+str_input: 
+str_input_indices: []
+str_output: 
+str_output_indices: []
+use_auxiliary: True
+use_buffer: False
+use_dropout: True
+use_dropout1: False
+which_epoch: 5
+which_epoch1: 0+0
+which_model_netD: n_layers
+which_model_netG: resnet_6blocks
+which_model_preNet: 2_layers
+zip_results: 0
+-------------- End ----------------
+/mnt/Files/XIremote/OneDrive - Wayne State University/XIauxiliary/XIcodes/Python/python3.6/pytorch1.2/XIfontGAN_yankunxi/XIFONTGAN_05_github/xifontgan/checkpoints/Capitals64_cGAN
+Traceback (most recent call last):
+  File "/mnt/Files/XIremote/OneDrive - Wayne State University/XIcodes/Python/python3.6/pytorch1.2/XIfontGAN_yankunxi/XIFONTGAN_05_github/xifontgan/exe/cGAN/XItrain_cGAN.py", line 34, in <module>
+    data_loader = CreateDataLoader(opt)
+  File "/mnt/Files/XIremote/OneDrive - Wayne State University/XIcodes/Python/python3.6/pytorch1.2/XIfontGAN_yankunxi/XIFONTGAN_05_github/xifontgan/data/XIdata_loader.py", line 58, in CreateDataLoader
+    data_loader.initialize(opt)
+  File "/mnt/Files/XIremote/OneDrive - Wayne State University/XIcodes/Python/python3.6/pytorch1.2/XIfontGAN_yankunxi/XIFONTGAN_05_github/xifontgan/data/XIdata_loader.py", line 1180, in initialize
+    dataset = ImageFolder(root=os.path.join(self.dataroot, opt.phase),
+  File "/mnt/Files/XIremote/OneDrive - Wayne State University/XIcodes/Python/python3.6/pytorch1.2/XIfontGAN_yankunxi/XIFONTGAN_05_github/xifontgan/data/XIimage_folder.py", line 63, in __init__
+    imgs = make_dataset(root)
+  File "/mnt/Files/XIremote/OneDrive - Wayne State University/XIcodes/Python/python3.6/pytorch1.2/XIfontGAN_yankunxi/XIFONTGAN_05_github/xifontgan/data/XIimage_folder.py", line 24, in make_dataset
+    assert os.path.isdir(dir), '%s is not a valid directory' % dir
+AssertionError: /mnt/Files/XIremote/OneDrive - Wayne State University/XIauxiliary/XIdataset/font/English/Capitals64/train is not a valid directory
+reading section [Shuo-YankunXi], option [everything_root], value [/mnt/Files/XIremote/OneDrive - Wayne State University/]
+reading section [Shuo-YankunXi], option [project_relative], value [XIcodes/Python/python3.6/pytorch1.2/XIfontGAN_yankunxi/XIFONTGAN_05_github/xifontgan]
+reading section [Shuo-YankunXi], option [data_relative], value [XIdataset/font/English]
+reading section [Shuo-YankunXi], option [use_auxiliary], value [True]
+reading section [Shuo-YankunXi], option [auxiliary_root], value [/mnt/Files/XIauxiliary]
+reading section [Shuo-YankunXi], option [use_buffer], value [False]
+reading section [Shuo-YankunXi], option [buffer_root], value [/mnt/Files/XIremote/OneDrive - Wayne State University/XIbuffer]
+------------ Options -------------
+align_data: True
+aspect_ratio: 1.0
+auxiliary_root: /mnt/Files/XIauxiliary
+base_font: False
+base_root: 
+batchSize: 150
+batchSplit: 1
+beta1: 0.5
+blanks: 0.7
+buffer_root: /mnt/Files/XIremote/OneDrive - Wayne State University/XIbuffer
+charset: ENcap
+checkpoints_dir: checkpoints
+computer_name: Shuo-YankunXi
+conditional: True
+continue_latest: True
+conv3d: True
+data_loader: base
+data_relative: XIdataset/font/English
+dataset: Capitals64
+diff_loss0: L1
+diff_loss1: MSE
+display_freq: 100
+display_id: 0
+display_winsize: 256
+downsampling_0_mult: 3
+downsampling_0_n: 2
+dspost_G: 0
+dspost_Gsk: 1
+everything_root: /mnt/Files/XIremote/OneDrive - Wayne State University/
+experiment_dir: Capitals64_cGAN
+fineSize: 64
+flat: False
+gamma: 0.0001
+gpu_ids: [0]
+grps: 26
+how_many: 10000
+input_nc: 26
+input_nc_1: 3
+isTrain: True
+lambda_A: 100.0
+lambda_C: 0.0
+loadSize: 64
+lr: 0.0002
+max_dataset_size: inf
+model: cGAN
+nThreads: 2
+n_layers_D: 1
+ndf: 64
+ngf: 64
+nif: 32
+niter: 25
+niter_decay: 0
+no_Style2Glyph: False
+no_html: False
+no_lsgan: False
+no_permutation: False
+noisy_disc: False
+norm: batch
+ntest: inf
+orna: False
+output_nc: 26
+output_nc_1: 3
+partial: False
+phase: train
+pool_size: 50
+print_freq: 1
+print_weights: False
+project_relative: XIcodes/Python/python3.6/pytorch1.2/XIfontGAN_yankunxi/XIFONTGAN_05_github/xifontgan
+project_root: /mnt/Files/XIremote/OneDrive - Wayne State University/XIcodes/Python/python3.6/pytorch1.2/XIfontGAN_yankunxi/XIFONTGAN_05_github/xifontgan
+results_dir: results
+rgb: False
+rgb_in: False
+rgb_out: False
+save_epoch_freq: 100
+save_latest_freq: 10000
+serial_batches: False
+skmode: -1
+stack: False
+stack_result: True
+str_input: 
+str_input_indices: []
+str_output: 
+str_output_indices: []
+use_auxiliary: True
+use_buffer: False
+use_dropout: True
+use_dropout1: False
+which_epoch: 5
+which_epoch1: 0+0
+which_model_netD: n_layers
+which_model_netG: resnet_6blocks
+which_model_preNet: 2_layers
+zip_results: 0
+-------------- End ----------------
+/mnt/Files/XIauxiliary/XIcodes/Python/python3.6/pytorch1.2/XIfontGAN_yankunxi/XIFONTGAN_05_github/xifontgan/checkpoints/Capitals64_cGAN
+DataLoader
+cGAN
+classname Conv3d
+in random conv
+classname BatchNorm3d
+classname ReLU
+classname Sequential
+classname ResnetGenerator_3d_conv
+resnet_6blocks
+classname Conv2d
+in random conv
+classname BatchNorm2d
+in random batchnorm
+classname ReLU
+classname Conv2d
+in random conv
+classname BatchNorm2d
+in random batchnorm
+classname ReLU
+classname Conv2d
+in random conv
+classname BatchNorm2d
+in random batchnorm
+classname ReLU
+classname Conv2d
+in random conv
+classname BatchNorm2d
+in random batchnorm
+classname ReLU
+classname Dropout
+classname Conv2d
+in random conv
+classname BatchNorm2d
+in random batchnorm
+classname Sequential
+classname ResnetBlock
+classname Conv2d
+in random conv
+classname BatchNorm2d
+in random batchnorm
+classname ReLU
+classname Dropout
+classname Conv2d
+in random conv
+classname BatchNorm2d
+in random batchnorm
+classname Sequential
+classname ResnetBlock
+classname Conv2d
+in random conv
+classname BatchNorm2d
+in random batchnorm
+classname ReLU
+classname Dropout
+classname Conv2d
+in random conv
+classname BatchNorm2d
+in random batchnorm
+classname Sequential
+classname ResnetBlock
+classname Conv2d
+in random conv
+classname BatchNorm2d
+in random batchnorm
+classname ReLU
+classname Dropout
+classname Conv2d
+in random conv
+classname BatchNorm2d
+in random batchnorm
+classname Sequential
+classname ResnetBlock
+classname Conv2d
+in random conv
+classname BatchNorm2d
+in random batchnorm
+classname ReLU
+classname Dropout
+classname Conv2d
+in random conv
+classname BatchNorm2d
+in random batchnorm
+classname Sequential
+classname ResnetBlock
+classname Conv2d
+in random conv
+classname BatchNorm2d
+in random batchnorm
+classname ReLU
+classname Dropout
+classname Conv2d
+in random conv
+classname BatchNorm2d
+in random batchnorm
+classname Sequential
+classname ResnetBlock
+classname ConvTranspose2d
+in random conv
+classname BatchNorm2d
+in random batchnorm
+classname ReLU
+classname ConvTranspose2d
+in random conv
+classname BatchNorm2d
+in random batchnorm
+classname ReLU
+classname Conv2d
+in random conv
+classname Tanh
+classname Sequential
+classname ResnetGenerator
+2 layers convolution applied before being fed into the discriminator
+classname Conv2d
+in random conv
+classname BatchNorm2d
+in random batchnorm
+classname ReLU
+classname Conv2d
+in random conv
+classname BatchNorm2d
+in random batchnorm
+classname ReLU
+classname Sequential
+classname InputTransformation
+classname Conv2d
+in random conv
+classname LeakyReLU
+classname Conv2d
+in random conv
+classname BatchNorm2d
+in random batchnorm
+classname LeakyReLU
+classname Conv2d
+in random conv
+classname Sequential
+classname NLayerDiscriminator
+Traceback (most recent call last):
+  File "/mnt/Files/XIremote/OneDrive - Wayne State University/XIcodes/Python/python3.6/pytorch1.2/XIfontGAN_yankunxi/XIFONTGAN_05_github/xifontgan/exe/cGAN/XItrain_cGAN.py", line 39, in <module>
+    model = create_model(opt)
+  File "/mnt/Files/XIremote/OneDrive - Wayne State University/XIcodes/Python/python3.6/pytorch1.2/XIfontGAN_yankunxi/XIFONTGAN_05_github/xifontgan/models/XImodels.py", line 51, in create_model
+    model.initialize(opt)
+  File "/mnt/Files/XIremote/OneDrive - Wayne State University/XIcodes/Python/python3.6/pytorch1.2/XIfontGAN_yankunxi/XIFONTGAN_05_github/xifontgan/models/XIcGAN_model.py", line 73, in initialize
+    self.load_network(self.netG_3d, 'G_3d', latest=latest)
+  File "/mnt/Files/XIremote/OneDrive - Wayne State University/XIcodes/Python/python3.6/pytorch1.2/XIfontGAN_yankunxi/XIFONTGAN_05_github/xifontgan/models/XIbase_model.py", line 145, in load_network
+    weights = torch.load(save_path)
+  File "/home/python/python3.8/pt1.6+tf2.3/lib/python3.8/site-packages/torch/serialization.py", line 571, in load
+    with _open_file_like(f, 'rb') as opened_file:
+  File "/home/python/python3.8/pt1.6+tf2.3/lib/python3.8/site-packages/torch/serialization.py", line 229, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/home/python/python3.8/pt1.6+tf2.3/lib/python3.8/site-packages/torch/serialization.py", line 210, in __init__
+    super(_open_file, self).__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: '/mnt/Files/XIauxiliary/XIcodes/Python/python3.6/pytorch1.2/XIfontGAN_yankunxi/XIFONTGAN_05_github/xifontgan/checkpoints/Capitals64_cGAN/latest_net_G_3d.pth'
+reading section [Shuo-YankunXi], option [everything_root], value [/mnt/Files/XIremote/OneDrive - Wayne State University/]
+reading section [Shuo-YankunXi], option [project_relative], value [XIcodes/Python/python3.6/pytorch1.2/XIfontGAN_yankunxi/XIFONTGAN_05_github/xifontgan]
+reading section [Shuo-YankunXi], option [data_relative], value [XIdataset/font/English]
+reading section [Shuo-YankunXi], option [use_auxiliary], value [True]
+reading section [Shuo-YankunXi], option [auxiliary_root], value [/mnt/Files/XIauxiliary]
+reading section [Shuo-YankunXi], option [use_buffer], value [False]
+reading section [Shuo-YankunXi], option [buffer_root], value [/mnt/Files/XIremote/OneDrive - Wayne State University/XIbuffer]
+------------ Options -------------
+align_data: True
+aspect_ratio: 1.0
+auxiliary_root: /mnt/Files/XIauxiliary
+base_font: False
+base_root: 
+batchSize: 150
+batchSplit: 1
+beta1: 0.5
+blanks: 0.7
+buffer_root: /mnt/Files/XIremote/OneDrive - Wayne State University/XIbuffer
+charset: ENcap
+checkpoints_dir: checkpoints
+computer_name: Shuo-YankunXi
+conditional: True
+continue_latest: False
+conv3d: True
+data_loader: base
+data_relative: XIdataset/font/English
+dataset: Capitals64
+diff_loss0: L1
+diff_loss1: MSE
+display_freq: 100
+display_id: 0
+display_winsize: 256
+downsampling_0_mult: 3
+downsampling_0_n: 2
+dspost_G: 0
+dspost_Gsk: 1
+everything_root: /mnt/Files/XIremote/OneDrive - Wayne State University/
+experiment_dir: Capitals64_cGAN
+fineSize: 64
+flat: False
+gamma: 0.0001
+gpu_ids: [0]
+grps: 26
+how_many: 10000
+input_nc: 26
+input_nc_1: 3
+isTrain: True
+lambda_A: 100.0
+lambda_C: 0.0
+loadSize: 64
+lr: 0.0002
+max_dataset_size: inf
+model: cGAN
+nThreads: 2
+n_layers_D: 1
+ndf: 64
+ngf: 64
+nif: 32
+niter: 25
+niter_decay: 0
+no_Style2Glyph: False
+no_html: False
+no_lsgan: False
+no_permutation: False
+noisy_disc: False
+norm: batch
+ntest: inf
+orna: False
+output_nc: 26
+output_nc_1: 3
+partial: False
+phase: train
+pool_size: 50
+print_freq: 1
+print_weights: False
+project_relative: XIcodes/Python/python3.6/pytorch1.2/XIfontGAN_yankunxi/XIFONTGAN_05_github/xifontgan
+project_root: /mnt/Files/XIremote/OneDrive - Wayne State University/XIcodes/Python/python3.6/pytorch1.2/XIfontGAN_yankunxi/XIFONTGAN_05_github/xifontgan
+results_dir: results
+rgb: False
+rgb_in: False
+rgb_out: False
+save_epoch_freq: 100
+save_latest_freq: 10000
+serial_batches: False
+skmode: -1
+stack: False
+stack_result: True
+str_input: 
+str_input_indices: []
+str_output: 
+str_output_indices: []
+use_auxiliary: True
+use_buffer: False
+use_dropout: True
+use_dropout1: False
+which_epoch: 0
+which_epoch1: 0+0
+which_model_netD: n_layers
+which_model_netG: resnet_6blocks
+which_model_preNet: 2_layers
+zip_results: 0
+-------------- End ----------------
+/mnt/Files/XIauxiliary/XIcodes/Python/python3.6/pytorch1.2/XIfontGAN_yankunxi/XIFONTGAN_05_github/xifontgan/checkpoints/Capitals64_cGAN
+DataLoader
+cGAN
+classname Conv3d
+in random conv
+classname BatchNorm3d
+classname ReLU
+classname Sequential
+classname ResnetGenerator_3d_conv
+resnet_6blocks
+classname Conv2d
+in random conv
+classname BatchNorm2d
+in random batchnorm
+classname ReLU
+classname Conv2d
+in random conv
+classname BatchNorm2d
+in random batchnorm
+classname ReLU
+classname Conv2d
+in random conv
+classname BatchNorm2d
+in random batchnorm
+classname ReLU
+classname Conv2d
+in random conv
+classname BatchNorm2d
+in random batchnorm
+classname ReLU
+classname Dropout
+classname Conv2d
+in random conv
+classname BatchNorm2d
+in random batchnorm
+classname Sequential
+classname ResnetBlock
+classname Conv2d
+in random conv
+classname BatchNorm2d
+in random batchnorm
+classname ReLU
+classname Dropout
+classname Conv2d
+in random conv
+classname BatchNorm2d
+in random batchnorm
+classname Sequential
+classname ResnetBlock
+classname Conv2d
+in random conv
+classname BatchNorm2d
+in random batchnorm
+classname ReLU
+classname Dropout
+classname Conv2d
+in random conv
+classname BatchNorm2d
+in random batchnorm
+classname Sequential
+classname ResnetBlock
+classname Conv2d
+in random conv
+classname BatchNorm2d
+in random batchnorm
+classname ReLU
+classname Dropout
+classname Conv2d
+in random conv
+classname BatchNorm2d
+in random batchnorm
+classname Sequential
+classname ResnetBlock
+classname Conv2d
+in random conv
+classname BatchNorm2d
+in random batchnorm
+classname ReLU
+classname Dropout
+classname Conv2d
+in random conv
+classname BatchNorm2d
+in random batchnorm
+classname Sequential
+classname ResnetBlock
+classname Conv2d
+in random conv
+classname BatchNorm2d
+in random batchnorm
+classname ReLU
+classname Dropout
+classname Conv2d
+in random conv
+classname BatchNorm2d
+in random batchnorm
+classname Sequential
+classname ResnetBlock
+classname ConvTranspose2d
+in random conv
+classname BatchNorm2d
+in random batchnorm
+classname ReLU
+classname ConvTranspose2d
+in random conv
+classname BatchNorm2d
+in random batchnorm
+classname ReLU
+classname Conv2d
+in random conv
+classname Tanh
+classname Sequential
+classname ResnetGenerator
+2 layers convolution applied before being fed into the discriminator
+classname Conv2d
+in random conv
+classname BatchNorm2d
+in random batchnorm
+classname ReLU
+classname Conv2d
+in random conv
+classname BatchNorm2d
+in random batchnorm
+classname ReLU
+classname Sequential
+classname InputTransformation
+classname Conv2d
+in random conv
+classname LeakyReLU
+classname Conv2d
+in random conv
+classname BatchNorm2d
+in random batchnorm
+classname LeakyReLU
+classname Conv2d
+in random conv
+classname Sequential
+classname NLayerDiscriminator
+---------- Networks initialized -------------
+ResnetGenerator_3d_conv(
+  (model): Sequential(
+    (0): Conv3d(26, 26, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), groups=26)
+    (1): BatchNorm3d(26, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU(inplace=True)
+  )
+)
+Total number of parameters: 780
+ResnetGenerator(
+  (model): Sequential(
+    (0): Conv2d(26, 64, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3))
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU(inplace=True)
+    (3): Conv2d(64, 192, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+    (4): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (5): ReLU(inplace=True)
+    (6): Conv2d(192, 576, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+    (7): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (8): ReLU(inplace=True)
+    (9): ResnetBlock(
+      (conv_block): Sequential(
+        (0): Conv2d(576, 576, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace=True)
+        (3): Dropout(p=0.5, inplace=False)
+        (4): Conv2d(576, 576, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (5): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (10): ResnetBlock(
+      (conv_block): Sequential(
+        (0): Conv2d(576, 576, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace=True)
+        (3): Dropout(p=0.5, inplace=False)
+        (4): Conv2d(576, 576, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (5): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (11): ResnetBlock(
+      (conv_block): Sequential(
+        (0): Conv2d(576, 576, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace=True)
+        (3): Dropout(p=0.5, inplace=False)
+        (4): Conv2d(576, 576, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (5): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (12): ResnetBlock(
+      (conv_block): Sequential(
+        (0): Conv2d(576, 576, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace=True)
+        (3): Dropout(p=0.5, inplace=False)
+        (4): Conv2d(576, 576, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (5): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (13): ResnetBlock(
+      (conv_block): Sequential(
+        (0): Conv2d(576, 576, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace=True)
+        (3): Dropout(p=0.5, inplace=False)
+        (4): Conv2d(576, 576, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (5): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (14): ResnetBlock(
+      (conv_block): Sequential(
+        (0): Conv2d(576, 576, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace=True)
+        (3): Dropout(p=0.5, inplace=False)
+        (4): Conv2d(576, 576, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (5): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (15): ConvTranspose2d(576, 192, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), output_padding=(1, 1))
+    (16): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (17): ReLU(inplace=True)
+    (18): ConvTranspose2d(192, 64, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), output_padding=(1, 1))
+    (19): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (20): ReLU(inplace=True)
+    (21): Conv2d(64, 26, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3))
+    (22): Tanh()
+  )
+)
+Total number of parameters: 38230746
+InputTransformation(
+  (model): Sequential(
+    (0): Conv2d(52, 52, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+    (1): BatchNorm2d(52, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU(inplace=True)
+    (3): Conv2d(52, 52, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+    (4): BatchNorm2d(52, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (5): ReLU(inplace=True)
+  )
+)
+Total number of parameters: 48984
+NLayerDiscriminator(
+  (model): Sequential(
+    (0): Conv2d(52, 64, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2))
+    (1): LeakyReLU(negative_slope=0.2, inplace=True)
+    (2): Conv2d(64, 128, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2))
+    (3): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (4): LeakyReLU(negative_slope=0.2, inplace=True)
+    (5): Conv2d(128, 1, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2))
+  )
+)
+Total number of parameters: 291649
+-----------------------------------------------
+model [cGANModel] is working
+create auxiliary web directory /mnt/Files/XIauxiliary/XIcodes/Python/python3.6/pytorch1.2/XIfontGAN_yankunxi/XIFONTGAN_05_github/xifontgan/checkpoints/Capitals64_cGAN/web...
+#training images = 9000 / 9122
+LOADING from 0
+setting learning rate: 0.000200
+(epoch: 1, iters: 150, time: 0.011) G_GAN: 1.190 G_L1: 46.101 D_real: 1.801 D_fake: 1.106 

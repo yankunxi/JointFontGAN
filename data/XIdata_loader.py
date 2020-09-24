@@ -1,28 +1,23 @@
 #=============================
-# MC-GAN
-# Modified from https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix
-# By Samaneh Azadi
+# JointFontGAN
+# Modified from https://github.com/azadis/MC-GAN
+# By Yankun Xi
 #=============================
 
 from xifontgan.data.XIimage_folder import ImageFolder
 from xifontgan.data.XIbase_data_loader import BaseDataLoader
-from xifontgan.util.indexing import str2index
 import random
 import torch.utils.data
 import torchvision.transforms as transforms
 from builtins import object
 import os
 import numpy as np
-from torch import LongTensor, index_select
-# from scipy import misc
-# import xifontgan.util.XIutil as util
-# from PIL import Image
-# from torch.nn import UpsamplingBilinear2d
-# from torch.autograd import Variable
+from torch import LongTensor
 import warnings
 import pickle
 from skimage.morphology import skeletonize
 from skimage.util import invert
+
 
 def normalize_stack(input, val=0.5):
     # normalize an tensor with arbitrary number of channels:
@@ -123,6 +118,7 @@ class FlatData(object):
         return {'A': AA, 'A_paths': AB_paths, 'B':B, 'B_paths':AB_paths}
 
 
+# generate alphabet
 class Data(object):
     def __init__(self, str_indices, data_loader, fineSize,
                  max_dataset_size, rgb, dict_test={}, blanks=0.7):
@@ -194,6 +190,7 @@ class Data(object):
                 'indices': remain_ind}
 
 
+# generate alphabet with skeletons
 class skData(object):
     def __init__(self, str_indices, data_loader, fineSize,
                  max_dataset_size, rgb, dict_test={}, blanks=0.7,
@@ -291,6 +288,7 @@ class skData(object):
                     'Ask1': Ask1, 'Bsk1': Bsk1, 'indices': remain_ind}
 
 
+# generate randomly extended alphabet with skeletons
 class EHskData(object):
     def __init__(self, str_indices, data_loader, fineSize,
                  max_dataset_size, rgb, dict_test={}, blanks=0.7,
@@ -413,6 +411,7 @@ class EHskData(object):
                         remain_inds}
 
 
+# generate randomly extended alphabet
 class ExHalfData(object):
     def __init__(self, data_loader, fineSize, max_dataset_size, rgb,
                  dict_test={}, blanks=0.7):
@@ -493,6 +492,7 @@ class ExHalfData(object):
                 'B_paths': AB_paths, 'indices': remain_inds}
 
 
+# generate randomly extended alphabet along timestep
 class ExHalfTData(object):
     def __init__(self, str_indices, data_loader, fineSize,
                  max_dataset_size, rgb,
@@ -580,6 +580,7 @@ class ExHalfTData(object):
                 'B_paths': AB_paths, 'indices': remain_inds}
 
 
+# generate randomly extended alphabet with skeletons along timestep
 class ExHalfTskData(object):
     def __init__(self, str_indices, data_loader, fineSize,
                  max_dataset_size, rgb,
@@ -725,6 +726,7 @@ class ExHalfTskData(object):
                         remain_inds}
 
 
+# generate alphabet for selected font
 class PartialData(object):
     def __init__(self, data_loader_A, data_loader_B, data_loader_base, fineSize, loadSize, max_dataset_size, phase, base_font=False, blanks=0):
         self.data_loader_A = data_loader_A
@@ -804,6 +806,7 @@ class PartialData(object):
         return {'A': A, 'A_paths': A_paths, 'B':B, 'B_paths':B_paths, 'A_base':self.A_base, 'indices': []}
 
 
+# generate randomly extended alphabet for selected font
 class EPartialData(object):
     def __init__(self, data_loader_A, data_loader_B, data_loader_base, fineSize, loadSize, max_dataset_size, phase, base_font=False, blanks=0):
         self.data_loader_A = data_loader_A
@@ -904,6 +907,7 @@ class EPartialData(object):
                 'indices': observed_glyph}
 
 
+# data loader for second stage with PartialData
 class StackDataLoader(BaseDataLoader):
     """ a subset of the glyphs are observed and being used for transferring style
         train a pix2pix model conditioned on b/w glyphs
@@ -985,6 +989,7 @@ class StackDataLoader(BaseDataLoader):
         return min(len(self.dataset_A), self.opt.max_dataset_size)
 
 
+# data loader for second stage with EPartialData
 class EStackDataLoader(BaseDataLoader):
     """ a subset of the glyphs are observed and being used for transferring style
         train a pix2pix model conditioned on b/w glyphs
@@ -1036,7 +1041,6 @@ class EStackDataLoader(BaseDataLoader):
 
         if opt.base_font:
             # Read and apply transformation on the BASE font
-
             dataset_base = ImageFolder(root=self.baseroot,
                                        transform=transform,
                                        return_paths=True,
@@ -1162,6 +1166,7 @@ class PartialDataLoader(BaseDataLoader):
         return min(len(self.dataset_A), self.opt.max_dataset_size)
 
 
+# data loaders
 class DataLoader(BaseDataLoader):
     def initialize(self, opt):
         BaseDataLoader.initialize(self, opt)
@@ -1191,6 +1196,19 @@ class DataLoader(BaseDataLoader):
                 warnings.warn('Blanks in test data are random. create a pkl file in ~/data_path/test_dict/dict.pkl including predifined random indices')
 
         str_indices = self.opt.str_input_indices
+        if opt.base_font:
+            # Read and apply transformation on the BASE font
+            dataset_base = ImageFolder(root=self.baseroot,
+                                       transform=transform,
+                                       return_paths=True,
+                                       font_trans=True, rgb=opt.rgb,
+                                       fineSize=opt.fineSize,
+                                       loadSize=opt.loadSize)
+            data_loader_base = torch.utils.data.DataLoader(
+                dataset_base,
+                batch_size=1,
+                shuffle=False,
+                num_workers=int(self.opt.nThreads))
         if opt.flat:
             self._data = FlatData(data_loader, data_loader_base, opt.fineSize, opt.max_dataset_size, opt.rgb, dict_inds, opt.base_font, opt.blanks)
         else:
@@ -1236,6 +1254,19 @@ class skDataLoader(BaseDataLoader):
                 warnings.warn('Blanks in test data are random. create a pkl file in ~/data_path/test_dict/dict.pkl including predifined random indices')
 
         str_indices = self.opt.str_input_indices
+        if opt.base_font:
+            # Read and apply transformation on the BASE font
+            dataset_base = ImageFolder(root=self.baseroot,
+                                       transform=transform,
+                                       return_paths=True,
+                                       font_trans=True, rgb=opt.rgb,
+                                       fineSize=opt.fineSize,
+                                       loadSize=opt.loadSize)
+            data_loader_base = torch.utils.data.DataLoader(
+                dataset_base,
+                batch_size=1,
+                shuffle=False,
+                num_workers=int(self.opt.nThreads))
         if opt.flat:
             self._data = FlatData(data_loader, data_loader_base, opt.fineSize, opt.max_dataset_size, opt.rgb, dict_inds, opt.base_font, opt.blanks)
         else:
@@ -1283,6 +1314,19 @@ class EHskDataLoader(BaseDataLoader):
                 warnings.warn('Blanks in test data are random. create a pkl file in ~/data_path/test_dict/dict.pkl including predifined random indices')
 
         str_indices = self.opt.str_input_indices
+        if opt.base_font:
+            # Read and apply transformation on the BASE font
+            dataset_base = ImageFolder(root=self.baseroot,
+                                       transform=transform,
+                                       return_paths=True,
+                                       font_trans=True, rgb=opt.rgb,
+                                       fineSize=opt.fineSize,
+                                       loadSize=opt.loadSize)
+            data_loader_base = torch.utils.data.DataLoader(
+                dataset_base,
+                batch_size=1,
+                shuffle=False,
+                num_workers=int(self.opt.nThreads))
         if opt.flat:
             self._data = FlatData(data_loader, data_loader_base, opt.fineSize, opt.max_dataset_size, opt.rgb, dict_inds, opt.base_font, opt.blanks)
         else:
@@ -1321,6 +1365,19 @@ class ExHalfDataLoader(BaseDataLoader):
             num_workers=int(self.opt.nThreads), drop_last=True)
 
         self.dataset = dataset
+        if opt.base_font:
+            # Read and apply transformation on the BASE font
+            dataset_base = ImageFolder(root=self.baseroot,
+                                       transform=transform,
+                                       return_paths=True,
+                                       font_trans=True, rgb=opt.rgb,
+                                       fineSize=opt.fineSize,
+                                       loadSize=opt.loadSize)
+            data_loader_base = torch.utils.data.DataLoader(
+                dataset_base,
+                batch_size=1,
+                shuffle=False,
+                num_workers=int(self.opt.nThreads))
         dict_inds = {}
         test_dict = self.dataroot + '/test_dict/dict.pkl'
         if opt.phase == 'test':
@@ -1368,6 +1425,19 @@ class ExHalfTDataLoader(BaseDataLoader):
             num_workers=int(self.opt.nThreads), drop_last=True)
 
         self.dataset = dataset
+        if opt.base_font:
+            # Read and apply transformation on the BASE font
+            dataset_base = ImageFolder(root=self.baseroot,
+                                       transform=transform,
+                                       return_paths=True,
+                                       font_trans=True, rgb=opt.rgb,
+                                       fineSize=opt.fineSize,
+                                       loadSize=opt.loadSize)
+            data_loader_base = torch.utils.data.DataLoader(
+                dataset_base,
+                batch_size=1,
+                shuffle=False,
+                num_workers=int(self.opt.nThreads))
         dict_inds = {}
         test_dict = self.dataroot + '/test_dict/dict.pkl'
         if opt.phase == 'test':
@@ -1428,6 +1498,19 @@ class ExHalfTskDataLoader(BaseDataLoader):
                     'Blanks in test data are random. create a pkl file in ~/data_path/test_dict/dict.pkl including predifined random indices')
 
         str_indices = self.opt.str_input_indices
+        if opt.base_font:
+            # Read and apply transformation on the BASE font
+            dataset_base = ImageFolder(root=self.baseroot,
+                                       transform=transform,
+                                       return_paths=True,
+                                       font_trans=True, rgb=opt.rgb,
+                                       fineSize=opt.fineSize,
+                                       loadSize=opt.loadSize)
+            data_loader_base = torch.utils.data.DataLoader(
+                dataset_base,
+                batch_size=1,
+                shuffle=False,
+                num_workers=int(self.opt.nThreads))
         if opt.flat:
             self._data = FlatData(data_loader, data_loader_base, opt.fineSize,
                                   opt.max_dataset_size, opt.rgb, dict_inds,

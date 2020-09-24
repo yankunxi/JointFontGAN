@@ -39,7 +39,7 @@ NITERD=0
 #batch size
 BATCHSIZE=150
 CUDA_ID=0
-LOAD_EPOCH=5
+LOAD_EPOCH=0
 #LOAD_EPOCH='600'
 DOWNSAMPLING_0_N=2
 DOWNSAMPLING_0_MULT=3
@@ -66,7 +66,7 @@ CUDA_VISIBLE_DEVICES=${CUDA_ID} python -u "${EXE_PATH}" --dataset "${DATASET}" -
 --batchSize ${BATCHSIZE} --conditional --downsampling_0_n ${DOWNSAMPLING_0_N} \
 --downsampling_0_mult ${DOWNSAMPLING_0_MULT} \
 --save_epoch_freq 100 --print_freq 1 --data_loader ${DATA_LOADER} \
---conv3d --which_epoch ${LOAD_EPOCH} --stack_result --continue_latest
+--conv3d --which_epoch ${LOAD_EPOCH} --stack_result #--continue_latest
 } 2>&1 | tee -a "${TRAINLOG}"
 
 
