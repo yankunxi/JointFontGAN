@@ -1,6 +1,6 @@
 # JointFontGAN in PyTorch
 
-This is the implementation of the [JointFontGAN: Joint Geometry-Content GAN for Font Generation via Few-Shot Learning](https://dl.acm.org/doi/10.1145/3394171.3413705). 
+This is the implementation of our ACM International Conference on Multimedia 2020 paper "[JointFontGAN: Joint Geometry-Content GAN for Font Generation via Few-Shot Learning](https://dl.acm.org/doi/10.1145/3394171.3413705)". 
 The code was written by [Yankun Xi](https://github.com/yankunxi). More details are given in the following.
 
 ## Prerequisites:
@@ -27,7 +27,8 @@ mkdir dataset
 
 - Download dataset:
 
-Download the following two datasets into `dataset` folder and unzip.
+Download the following two font datasets into `dataset` folder and unzip. 
+Each of the datasets consists of training and test images.
 
 Capitals64 dataset: https://drive.google.com/file/d/1qrxhhgG2vwUhhq-shbHxzt3b1ahkoNt_/view?usp=sharing
 
@@ -71,7 +72,7 @@ Or you can skip the training phase and test on our pretrained models.
 . ./scripts/EskGAN/XItest_EskGAN2_dspostG=1.sh SandunLK10k64 test
 ```
 
-- We also provide test images:
+- We also provide our generated test font results:
 
 Capitals54 dataset: https://drive.google.com/file/d/1gjqnjhdes2rsTr6bX3rpGsBaWw_sIEyn/view?usp=sharing
 
