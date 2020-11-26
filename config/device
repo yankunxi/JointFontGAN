@@ -1,9 +1,0 @@
-[Shuo-YankunXi]
-everything_root = /mnt/Files/XIremote/OneDrive - Wayne State University/
-project_relative = XIcodes/Python/python3.6/pytorch1.2/XIfontGAN_yankunxi/XIFONTGAN_05_github/xifontgan
-data_relative = XIdataset/font/English
-use_auxiliary = True
-auxiliary_root = /mnt/Files/XIauxiliary
-use_buffer = False
-buffer_root = /mnt/Files/XIremote/OneDrive - Wayne State University/XIbuffer
-

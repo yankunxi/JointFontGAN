@@ -23,19 +23,52 @@ pip install scikit-image
 mkdir JointFontGAN
 cd JointFontGAN
 git clone https://github.com/never-witness/xifontgan
+mkdir dataset
+```
+
+- Download dataset:
+
+Download the following two datasets into `dataset` folder and unzip.
+
+Capitals64 dataset: https://drive.google.com/file/d/1qrxhhgG2vwUhhq-shbHxzt3b1ahkoNt_/view?usp=sharing
+
+SandunLK10k64 dataset: https://drive.google.com/file/d/1VgzxiBrYYUdB0eyNKVb137W0jY43YCeM/view?usp=sharing
+
+- Enter this repo:
+```bash
 cd xifontgan
 ```
 
+- (Optional) Download pre-trained model
+
+Download the following models into `checkpoints` folder and unzip.
+
+Capitals54 dataset: https://drive.google.com/file/d/1C3JvbjdRecqVc3UmWxR1mLP_i0hwmDxp/view?usp=sharing
+
+SandunLK10k64 dataset: https://drive.google.com/file/d/1T140Uig4CfL8W6vsh0TElkguBAJrf_Rp/view?usp=sharing
+
+
+
 ### JointFontGAN train/test
 
-
-edit ./configure/device
-
+- To train the model, please run the following scripts for the two datasets:
 
 ```bash
 . ./scripts/EskGAN/XItrain_EskGAN.sh Capitals64
 ```
 
 ```bash
+. ./scripts/EskGAN/XItrain_EskGAN2_dspostG=1.sh SandunLK10k64
+```
+
+Or you can skip the training phase and test on our pretrained models.
+
+- To test the model:
+
+```bash
 . ./scripts/EskGAN/XItest_EskGAN.sh Capitals64 test
+```
+
+```bash
+. ./scripts/EskGAN/XItest_EskGAN2_dspostG=1.sh SandunLK10k64 test
 ```

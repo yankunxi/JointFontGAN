@@ -19,10 +19,10 @@ class BaseOptions():
         # get computer information
         self.computer_name = os.uname()[1]
         # get project root
-        self.code_folder = "XIcodes"
+        self.code_folder = "xifontgan"
         self.auxiliary_folder = "XIauxiliary"
         self.buffer_folder = "XIbuffer"
-        code_folder_ = self.code_folder + "/"
+        code_folder_ = self.code_folder
         this_path = os.path.dirname(os.path.realpath(__file__))
         self.project_root = os.path.dirname(this_path)
         self.XI_root = self.project_root.rpartition(code_folder_)[0]
@@ -57,13 +57,15 @@ class BaseOptions():
         self.read_or_set(self.computer_name, "project_relative",
                          self.project_relative)
         self.read_or_set(self.computer_name, "data_relative",
-                         "XIdataset/font/English")
+                         "dataset/")
         self.read_or_set(self.computer_name, "use_auxiliary", "False")
-        self.read_or_set(self.computer_name, "auxiliary_root", self.XI_root +
-                         self.auxiliary_folder)
+        self.read_or_set(self.computer_name, "auxiliary_root",
+                         os.path.join(self.XI_root,
+                                      self.auxiliary_folder, ""))
         self.read_or_set(self.computer_name, "use_buffer", "False")
-        self.read_or_set(self.computer_name, "buffer_root", self.XI_root +
-                         self.buffer_folder)
+        self.read_or_set(self.computer_name, "buffer_root",
+                         os.path.join(self.XI_root,
+                                      self.buffer_folder, ""))
         if self.writing_config_file:
             with open(self.config_file_path, "w") as config_file:
                 self.config_parser.write(config_file)
