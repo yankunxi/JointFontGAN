@@ -37,6 +37,7 @@ SandunLK10k64 dataset: https://drive.google.com/file/d/1VgzxiBrYYUdB0eyNKVb137W0
 - Enter this repo:
 ```bash
 cd xifontgan
+mkdir checkpoints
 ```
 
 - (Optional) Download pre-trained model
@@ -72,6 +73,12 @@ Or you can skip the training phase and test on our pretrained models.
 ```bash
 . ./scripts/EskGAN/XItest_EskGAN2_dspostG=1.sh SandunLK10k64 test
 ```
+
+- We also provide test images:
+
+Capitals54 dataset: https://drive.google.com/file/d/1gjqnjhdes2rsTr6bX3rpGsBaWw_sIEyn/view?usp=sharing
+
+SandunLK10k64 dataset: https://drive.google.com/file/d/118hPUy2jRHn7wRZTYcDhfuOJJsvnbdLF/view?usp=sharing
 
 ### Citation
 
