@@ -1,8 +1,7 @@
 # JointFontGAN in PyTorch
 
-This is the implementation of the [JointFontGAN: Joint Geometry-Content GAN for Font Generation via Few-Shot Learning](https://dl.acm.org/doi/10.1145/3394171.3413705). The code was written by [Yankun Xi](https://github.com/yankunxi).
-If you use this code for your research, please cite:
-
+This is the implementation of the [JointFontGAN: Joint Geometry-Content GAN for Font Generation via Few-Shot Learning](https://dl.acm.org/doi/10.1145/3394171.3413705). 
+The code was written by [Yankun Xi](https://github.com/yankunxi). More details are given in the following.
 
 ## Prerequisites:
 - Linux or macOS
@@ -48,8 +47,6 @@ Capitals54 dataset: https://drive.google.com/file/d/1C3JvbjdRecqVc3UmWxR1mLP_i0h
 
 SandunLK10k64 dataset: https://drive.google.com/file/d/1T140Uig4CfL8W6vsh0TElkguBAJrf_Rp/view?usp=sharing
 
-
-
 ### JointFontGAN train/test
 
 - To train the model, please run the following scripts for the two datasets:
@@ -87,6 +84,7 @@ one would like to use smaller `BATCHSIZE`, but keep the product `BATCHSIZE * BAT
 
 ### Citation
 
+If you use this code for your research, please cite:
 ```
 @inproceedings{xi2020jointfontgan,
   title={JointFontGAN: Joint Geometry-Content GAN for Font Generation via Few-Shot Learning},
