@@ -80,6 +80,11 @@ Capitals54 dataset: https://drive.google.com/file/d/1gjqnjhdes2rsTr6bX3rpGsBaWw_
 
 SandunLK10k64 dataset: https://drive.google.com/file/d/118hPUy2jRHn7wRZTYcDhfuOJJsvnbdLF/view?usp=sharing
 
+- GPU difference:
+
+Based on different GPU RAM, two parameters might need to be modified in the training scripts. Generally, with less RAM,
+one would like to use smaller `BATCHSIZE`, but keep the product `BATCHSIZE * BATCHSPLIT` unchanged.
+
 ### Citation
 
 ```
