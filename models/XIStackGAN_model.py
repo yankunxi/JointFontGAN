@@ -8,8 +8,8 @@ import numpy as np
 import torch
 from collections import OrderedDict
 from torch.autograd import Variable
-import xifontgan.util.XIutil as util
-from xifontgan.util.image_pool import ImagePool
+import JointFontGAN.util.XIutil as util
+from JointFontGAN.util.image_pool import ImagePool
 from .XIbase_model import BaseModel
 from . import XInetworks
 from torch import index_select, LongTensor

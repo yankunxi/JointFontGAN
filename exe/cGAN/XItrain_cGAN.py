@@ -11,14 +11,14 @@ import time
 import configparser
 if __package__ is None:
     this_path = os.path.dirname(os.path.realpath(__file__))
-    project_root = this_path.rpartition("xifontgan")[0]
+    project_root = this_path.rpartition("JointFontGAN")[0]
     sys.path.insert(0, project_root)
-    from xifontgan.options.XItrain_options import TrainOptions
+    from JointFontGAN.options.XItrain_options import TrainOptions
     # set CUDA_VISIBLE_DEVICES before import torch
     opt = TrainOptions().parse()
-    from xifontgan.models.XImodels import create_model
-    from xifontgan.util.XIvisualizer import Visualizer
-    from xifontgan.data.XIdata_loader import CreateDataLoader
+    from JointFontGAN.models.XImodels import create_model
+    from JointFontGAN.util.XIvisualizer import Visualizer
+    from JointFontGAN.data.XIdata_loader import CreateDataLoader
 else:
     from ...options.XItrain_options import TrainOptions
     # set CUDA_VISIBLE_DEVICES before import torch

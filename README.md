@@ -21,7 +21,7 @@ pip install scikit-image
 ```bash
 mkdir JointFontGAN
 cd JointFontGAN
-git clone https://github.com/never-witness/xifontgan
+git clone https://github.com/yankunxi/JointFontGAN
 mkdir dataset
 ```
 
@@ -36,7 +36,7 @@ SandunLK10k64 dataset: https://drive.google.com/file/d/1VgzxiBrYYUdB0eyNKVb137W0
 
 - Enter this repo:
 ```bash
-cd xifontgan
+cd JointFontGAN
 mkdir checkpoints
 ```
 

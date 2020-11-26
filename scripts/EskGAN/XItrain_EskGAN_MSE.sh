@@ -17,10 +17,10 @@ DATASET=$1
 FILE_DIR=$(pwd)
 PC_NAME=$(hostname)
 XI_DIR=${FILE_DIR%XIcodes*}
-PROJECT_DIR=${FILE_DIR%xifontgan*}
+PROJECT_DIR=${FILE_DIR%JointFontGAN*}
 MODEL='EskGAN'
 
-EXE_PATH="${PROJECT_DIR}xifontgan/exe/${MODEL}/XItrain_${MODEL}.py"
+EXE_PATH="${PROJECT_DIR}JointFontGAN/exe/${MODEL}/XItrain_${MODEL}.py"
 DATA_LOADER='EHskeleton'
 #BLANKS=0.85
 # set pretrained glyphnet model
@@ -54,12 +54,12 @@ DIFF_LOSS0="MSE"
 SKMODE=1
 
 # build checkpoint folder
-if [ ! -d "${PROJECT_DIR}xifontgan/checkpoints/${EXPERIMENT_DIR}" ]; then
-	mkdir "${PROJECT_DIR}xifontgan/checkpoints/${EXPERIMENT_DIR}" -p
+if [ ! -d "${PROJECT_DIR}JointFontGAN/checkpoints/${EXPERIMENT_DIR}" ]; then
+	mkdir "${PROJECT_DIR}JointFontGAN/checkpoints/${EXPERIMENT_DIR}" -p
 fi
 
-TRAINLOG="${PROJECT_DIR}xifontgan/checkpoints/${EXPERIMENT_DIR}/log_train.txt"
-#A_LOG="${PROJECT_DIR}xifontgan/checkpoints/${EXPERIMENT_DIR}/output.txt"
+TRAINLOG="${PROJECT_DIR}JointFontGAN/checkpoints/${EXPERIMENT_DIR}/log_train.txt"
+#A_LOG="${PROJECT_DIR}JointFontGAN/checkpoints/${EXPERIMENT_DIR}/output.txt"
 #if [ -f "$LOG" ]; then
 #	rm "$LOG"
 #fi

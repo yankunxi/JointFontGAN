@@ -17,10 +17,10 @@ STR_OUTPUT=$4
 FILE_DIR=$(pwd)
 PC_NAME=$(hostname)
 XI_DIR=${FILE_DIR%XIcodes*}
-PROJECT_DIR=${FILE_DIR%xifontgan*}
+PROJECT_DIR=${FILE_DIR%JointFontGAN*}
 MODEL='EskGAN'
 
-EXE_PATH="${PROJECT_DIR}xifontgan/exe/${MODEL}/XItest_${MODEL}.py"
+EXE_PATH="${PROJECT_DIR}JointFontGAN/exe/${MODEL}/XItest_${MODEL}.py"
 DATA_LOADER='EHskeleton'
 #BLANKS=0.7
 # set pretrained glyphnet model
@@ -51,14 +51,14 @@ NIF=72
 SKMODE=1
 
 # build checkpoint folder
-if [ ! -d "${PROJECT_DIR}xifontgan/checkpoints/${EXPERIMENT_DIR}" ]; then
-	mkdir "${PROJECT_DIR}xifontgan/checkpoints/${EXPERIMENT_DIR}" -p
+if [ ! -d "${PROJECT_DIR}JointFontGAN/checkpoints/${EXPERIMENT_DIR}" ]; then
+	mkdir "${PROJECT_DIR}JointFontGAN/checkpoints/${EXPERIMENT_DIR}" -p
 fi
 # clear old logs
 if [ $EPOCH \> $NITER ]; then
-  TESTLOG="${PROJECT_DIR}xifontgan/checkpoints/${EXPERIMENT_DIR}/result_${PHASE}_${NITER}+$((EPOCH-NITER))@${NITERD}.txt";
+  TESTLOG="${PROJECT_DIR}JointFontGAN/checkpoints/${EXPERIMENT_DIR}/result_${PHASE}_${NITER}+$((EPOCH-NITER))@${NITERD}.txt";
 else
-  TESTLOG="${PROJECT_DIR}xifontgan/checkpoints/${EXPERIMENT_DIR}/result_${PHASE}_${EPOCH}.txt";
+  TESTLOG="${PROJECT_DIR}JointFontGAN/checkpoints/${EXPERIMENT_DIR}/result_${PHASE}_${EPOCH}.txt";
 fi
 
 if [ -f "$TESTLOG" ]; then

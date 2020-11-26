@@ -7,8 +7,8 @@
 import argparse
 import os
 from shutil import copy2
-from xifontgan.util import XIutil
-from xifontgan.util.indexing import str2index
+from JointFontGAN.util import XIutil
+from JointFontGAN.util.indexing import str2index
 import configparser
 
 
@@ -19,7 +19,7 @@ class BaseOptions():
         # get computer information
         self.computer_name = os.uname()[1]
         # get project root
-        self.code_folder = "xifontgan"
+        self.code_folder = "JointFontGAN"
         self.auxiliary_folder = "XIauxiliary"
         self.buffer_folder = "XIbuffer"
         code_folder_ = self.code_folder

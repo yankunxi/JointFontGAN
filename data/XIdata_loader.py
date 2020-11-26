@@ -4,8 +4,8 @@
 # By Yankun Xi
 #=============================
 
-from xifontgan.data.XIimage_folder import ImageFolder
-from xifontgan.data.XIbase_data_loader import BaseDataLoader
+from JointFontGAN.data.XIimage_folder import ImageFolder
+from JointFontGAN.data.XIbase_data_loader import BaseDataLoader
 import random
 import torch.utils.data
 import torchvision.transforms as transforms

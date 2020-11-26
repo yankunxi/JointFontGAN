@@ -7,9 +7,9 @@
 import torch
 from collections import OrderedDict
 from torch.autograd import Variable
-import xifontgan.util.XIutil as util
-from xifontgan.util.image_pool import ImagePool
-from xifontgan.util.indexing import str2index
+import JointFontGAN.util.XIutil as util
+from JointFontGAN.util.image_pool import ImagePool
+from JointFontGAN.util.indexing import str2index
 from .XIbase_model import BaseModel
 from . import XInetworks
 import random
