@@ -1,7 +1,7 @@
 # JointFontGAN in PyTorch
 
-This is the implementation of the [](https://arxiv.org/abs/). The code was written by [](https://github.com/).
-If you use this code or our [](https://github.com/) for your research, please cite:
+This is the implementation of the [JointFontGAN: Joint Geometry-Content GAN for Font Generation via Few-Shot Learning](https://dl.acm.org/doi/10.1145/3394171.3413705). The code was written by [Yankun Xi](https://github.com/yankunxi).
+If you use this code for your research, please cite:
 
 
 ## Prerequisites:
@@ -72,3 +72,19 @@ Or you can skip the training phase and test on our pretrained models.
 ```bash
 . ./scripts/EskGAN/XItest_EskGAN2_dspostG=1.sh SandunLK10k64 test
 ```
+
+### Citation
+
+```
+@inproceedings{xi2020jointfontgan,
+  title={JointFontGAN: Joint Geometry-Content GAN for Font Generation via Few-Shot Learning},
+  author={Xi, Yankun and Yan, Guoli and Hua, Jing and Zhong, Zichun},
+  booktitle={Proceedings of the 28th ACM International Conference on Multimedia},
+  pages={4309--4317},
+  year={2020}
+}
+```
+
+### Acknowledgements
+Code is inspired by [MC-GAN](https://github.com/azadis/MC-GAN/blob/master/README.md).
+Datasets are collected from [MC-GAN](https://github.com/azadis/MC-GAN/blob/master/README.md) and [Sandun.LK](https://sandunlk.home.blog/)
